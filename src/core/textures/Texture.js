@@ -433,11 +433,18 @@ export default class Texture extends EventEmitter
      * @param {String} imageUrl - File name of texture, for cache and resolving resolution.
      * @param {String} [name] - Human readible name for the texture cache. If no name is
      *        specified, only `imageUrl` will be used as the cache ID.
+     * @param {String} [glFormat] - gl format
+     * @param {String} [glType] - gl type
+
      * @return {PIXI.Texture} Output texture
      */
-    static fromLoader(source, imageUrl, name)
+    static fromLoader(source, imageUrl, name, glFormat, glType)
     {
         const baseTexture = new BaseTexture(source, undefined, getResolutionOfUrl(imageUrl));
+
+        baseTexture.glFormat = glFormat;
+        baseTexture.glType = glType;
+
         const texture = new Texture(baseTexture);
 
         baseTexture.imageUrl = imageUrl;

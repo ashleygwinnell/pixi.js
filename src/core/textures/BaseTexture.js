@@ -193,6 +193,22 @@ export default class BaseTexture extends EventEmitter
          */
         this._glTextures = {};
 
+        /**
+        * Pixel format of the GL texture - e.g. gl.RGBA, gl.RGB
+        * @private
+        * @member {number}
+        * @see https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D
+        */
+        this.glFormat = null; // gl.RGBA;
+
+        /**
+        * Type of the GL texture - e.g. gl.UNSIGNED_BYTE, gl.UNSIGNED_BYTE_4_4_4_4
+        * @private
+        * @member {number}
+        * @see https://developer.mozilla.org/en-US/docs/Web/API/WebGLRenderingContext/texImage2D
+        */
+        this.glType = null; // gl.UNSIGNED_BYTE;
+
         this._enabled = 0;
         this._virtalBoundId = -1;
 

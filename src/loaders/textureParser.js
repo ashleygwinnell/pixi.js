@@ -11,7 +11,9 @@ export default function ()
             resource.texture = Texture.fromLoader(
                 resource.data,
                 resource.url,
-                resource.name
+                resource.name,
+                resource.metadata ? resource.metadata.glFormat : null,
+                resource.metadata ? resource.metadata.glType : null
             );
         }
         next();

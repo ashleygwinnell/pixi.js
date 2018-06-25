@@ -123,7 +123,7 @@ export default class TextureManager
             }
             else
             {
-                glTexture = new GLTexture(this.gl, null, null, null, null);
+                glTexture = new GLTexture(this.gl, null, null, texture.glFormat, texture.glType);
                 glTexture.bind(location);
                 glTexture.premultiplyAlpha = true;
                 glTexture.upload(texture.source);
